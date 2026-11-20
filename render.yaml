@@ -1,0 +1,30 @@
+services:
+  - type: web
+    name: nexacore-sop-agent
+    runtime: docker
+    plan: free
+    envVars:
+      - key: N8N_PORT
+        value: "10000"
+      - key: N8N_HOST
+        value: "0.0.0.0"
+      - key: N8N_PROXY_HOPS
+        value: "1"
+      - key: WEBHOOK_URL
+        value: "https://nexacore-sop-agent.onrender.com/"
+      - key: N8N_ENCRYPTION_KEY
+        value: "nexacore-vamsi-secret-key-2026"
+      - key: DB_TYPE
+        value: "postgresdb"
+      - key: DB_POSTGRESDB_PORT
+        value: "5432"
+      - key: DB_POSTGRESDB_DATABASE
+        value: "postgres"
+      - key: DB_POSTGRESDB_SCHEMA
+        value: "n8n"
+      - key: DB_POSTGRESDB_HOST
+        sync: false
+      - key: DB_POSTGRESDB_USER
+        sync: false
+      - key: DB_POSTGRESDB_PASSWORD
+        sync: false
